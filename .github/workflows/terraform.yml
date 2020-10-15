@@ -18,10 +18,10 @@ jobs:
         uses: hashicorp/setup-terraform@v1
         with:
           terraform_version: 0.13.4
-          SUBSCRIPTION_ID: ${{ secrets.AZ_SUBSCRIPTION_ID }}
-          TENANT_ID: ${{ secrets.AZ_TENANT_ID }}
-          CLIENT_ID: ${{ secrets.TF_CLEINT_ID }}
-          CLIENT_SECRET: ${{ secrets.TF_CLIENT_SECRET }}
+          args: '-var="SUBSCRIPTION_ID=${{ secrets.AZ_SUBSCRIPTION_ID }}"'
+          args: '-var="TENANT_ID=${{ secrets.AZ_TENANT_ID }}"'
+          args: '-var="CLIENT_ID=${{ secrets.TF_CLIENT_ID }}"'
+          args: '-var="CLIENT_SECRET=${{ secrets.TF_CLIENT_SECRET }}"'         
       
       - name: 'Terraform Init'
         run: terraform init
