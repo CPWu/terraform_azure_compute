@@ -11,6 +11,10 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - uses: actions/checkout@v2
+      - name: Setup tmate session
+        uses: mxschmitt/action-tmate@v3
+
       - name: 'Checkout'
         uses: actions/checkout@v2
 
@@ -32,6 +36,7 @@ jobs:
           tf_actions_subcommand: 'plan'
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          args: '-var="SUBSCRIPTION_ID=${{ secrets.AZ_SUBSCRIPTION_ID }}" -var="TENANT_ID=${{ secrets.AZ_TENANT_ID }}" -var="CLIENT_ID=${{ secrets.TF_CLIENT_ID }}" -var="CLIENT_SECRET=${{ secrets.TF_CLIENT_SECRET }}" '                
+          args: '-var="SUBSCRIPTION_ID=${{ secrets.AZ_SUBSCRIPTION_ID }}" -var="TENANT_ID=${{ secrets.AZ_TENANT_ID }}" -var="CLIENT_ID=${{ secrets.TF_CLIENT_ID }}" -var="CLIENT_SECRET=${{ secrets.TF_CLIENT_SECRET }}"'                
+      
       - name: 'Terraform Apply'
         run: terraform apply
