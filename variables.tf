@@ -15,9 +15,27 @@ variable "TENANT_ID" {
 
 variable "RESOURCE_GROUP_NAME" {
     type = string
-    default = "temporary-rg"
+    default = "sandbox-rg"
 }
 variable "AZURE_REGION" {
     type = string
     default = "canadacentral"
+}
+
+variable "VNET_ADDRESS_SPACE" {
+    type = string
+    default = "10.0.0.0/16"
+}
+variable "SUBNET_ADDRESS_PREFIX" {
+    type = string
+    default = "10.0.2.0/24"
+}
+
+variable "SERVER_NAME" {
+    type = string
+    default = "sandbox"
+}
+variable "IP_TYPE" {
+    type = string
+    default = "Static"
 }
