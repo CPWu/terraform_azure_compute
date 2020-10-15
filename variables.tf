@@ -12,3 +12,12 @@ variable "CLIENT_SECRET" {
 variable "TENANT_ID" {
     type = string
 }
+
+variable "RESOURCE_GROUP_NAME" {
+    type = string
+    default = "temporary-rg"
+}
+variable "AZURE_REGION" {
+    type = string
+    default = "canadacentral"
+}
