@@ -31,7 +31,6 @@ jobs:
           tf_actions_version: 0.13.4
           tf_actions_subcommand: 'plan'
         env:
-          args: '-var="SUBSCRIPTION_ID=${{ secrets.AZ_SUBSCRIPTION_ID }}"'
-      
+          args: '-var="SUBSCRIPTION_ID=${{ secrets.AZ_SUBSCRIPTION_ID }}" -var="TENANT_ID=${{ secrets.AZ_TENANT_ID }}" -var="CLIENT_ID=${{ secrets.TF_CLIENT_ID }}" -var="CLIENT_SECRET=${{ secrets.TF_CLIENT_SECRET }}" '                
       - name: 'Terraform Apply'
         run: terraform apply
