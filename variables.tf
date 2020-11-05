@@ -39,3 +39,21 @@ variable "IP_TYPE" {
     type = string
     default = "Static"
 }
+
+variable "NODE_COUNT" {
+    type = number
+    default = 2
+    description = ""
+}
+
+variable "SERVER_USERNAME" {
+    type = string
+    default = "myadmin"
+    description = "Username used to login to the server"
+}
+
+variable "SERVER_PASSWORD" {
+    type = string
+    default = "password"
+    description = "Password used to login to the server"
+}
