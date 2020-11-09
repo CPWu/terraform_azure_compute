@@ -1,6 +1,6 @@
 # Terraform Azure Compute Module
 
-This repo will use Terraform/Azure/Github Actions to provision a basic compute using CI/CD with X amount of VM's
+This repo will use Terraform/Azure/Github Actions to provision three basic compute instances.
 
 ## Tech Stack
 
@@ -20,12 +20,7 @@ This repo will use Terraform/Azure/Github Actions to provision a basic compute u
 
 ## Usage
 
-````
-* Note that currently Terraform has an issue with using depends on for count resources.
-
-More information here: https://github.com/hashicorp/terraform/issues/15285
-
-````
+Non-Modular approach to creating this stack, as currently there are some issues with Terraform & Azure handling argument based initialization of resources.
 
 ## Variable Values
 
