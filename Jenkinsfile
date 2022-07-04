@@ -1,9 +1,9 @@
 pipeline {
   agent any
   stages {
-    stage('Test') {
+    stage('Terraform Init') {
       steps {
-        echo 'Starting the Pipeline' 
+        sh "terraform init"
       }
     }
   }
